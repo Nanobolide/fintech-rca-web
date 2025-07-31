@@ -1,70 +1,38 @@
-# React + TypeScript + Vite
+# 🌍 Fintech RCA — Site Vitrine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le site vitrine officiel de **Balaco**, une solution innovante de services financiers numériques pour la République Centrafricaine.
 
-Currently, two official plugins are available:
+## 🎯 Objectif du site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ce site présente :
+- Les services offerts par notre application mobile
+- Les solutions que nous proposons pour améliorer l'inclusion financière
+- Notre vision, nos valeurs et notre équipe
 
-## Expanding the ESLint configuration
+## 💡 Pourquoi Fintech RCA ?
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Aujourd’hui, une grande partie de la population centrafricaine n’a pas accès à des services financiers simples, rapides et sécurisés. **Balaco** veut changer cela grâce à :
+- Une application mobile simple d’usage
+- Des services de paiement, transfert, épargne et crypto accessibles à tous
+- Une technologie moderne, sécurisée et adaptée au contexte local
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🖼️ Aperçu du site
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+👉 **[Voir le site en ligne](https://tonlien.netlify.app)** (si déployé sur Netlify, Vercel, etc.)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![Capture d'écran du site](./screenshot.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Stack Technique
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- ⚛️ React + TypeScript
+- ⚡️ Vite
+- 🎨 TailwindCSS (ou autre selon ton choix)
+- 🔍 Déploiement : Netlify / Vercel
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# fintech-rca-web
+## 🧪 Lancer le projet localement
+
+```bash
+git clone https://github.com/tonpseudo/fintech-rca-web.git
+cd fintech-rca-web
+npm install
+npm run dev
