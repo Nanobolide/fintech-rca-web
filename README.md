@@ -18,9 +18,10 @@ Aujourd’hui, une grande partie de la population centrafricaine n’a pas accè
 
 ## 🖼️ Aperçu du site
 
-👉 **[Voir le site en ligne](https://tonlien.netlify.app)** (si déployé sur Netlify, Vercel, etc.)
+👉 **[Voir le site en ligne]([https://tonlien.netlify.app](https://fintech-rca-mxzd1njba-maidous-projects.vercel.app/))** 
+<img width="1839" height="843" alt="Capture d'écran 2025-08-02 003832" src="https://github.com/user-attachments/assets/f9b58490-af38-4baf-8bdf-6853807385c5" />
 
-![Capture d'écran du site](./screenshot.png)
+
 
 ## 🛠️ Stack Technique
 
