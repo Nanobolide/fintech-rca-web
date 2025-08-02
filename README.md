@@ -18,7 +18,7 @@ Aujourd’hui, une grande partie de la population centrafricaine n’a pas accè
 
 ## 🖼️ Aperçu du site
 
-👉 [Voir le site en ligne](https://fintech-rca-mxzd1zdba-maidous-projects.vercel.app/)
+👉 [Voir le site en ligne](https://fintech-rca-web.vercel.app/)
 
 
 
