@@ -1,14 +1,14 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const navItems = [
-    { id: "solutions", label: "Solutions" },
-    { id: "technologie", label: "Technologie" },
-    { id: "clients", label: "Nos Clients" },
-    { id: "faq", label: "FAQ" }
+    { id: "solution", label: "Notre Solution" },
+    { id: "modele", label: "Modèle Économique" },
+    { id: "impact", label: "Impact Social" },
+    { id: "contact", label: "Contact" }
   ];
 
   const toggleMobileMenu = () => {
@@ -20,7 +20,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Barre de navigation principale */}
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+          {/* Logo BALACO */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -28,9 +28,9 @@ export const Navbar = () => {
             className="flex items-center"
           >
             <div className="bg-[#00E0A1] text-[#0A1A2F] w-8 h-8 rounded-lg flex items-center justify-center mr-2 font-bold">
-              F
+              B
             </div>
-            <span className="text-xl font-bold">FinFlow</span>
+            <span className="text-xl font-bold">BALACO</span>
           </motion.div>
 
           {/* Navigation Desktop */}
@@ -58,7 +58,7 @@ export const Navbar = () => {
               transition={{ duration: 0.2 }}
               className="bg-[#00E0A1] text-[#0A1A2F] px-6 py-2 rounded-lg font-bold ml-4"
             >
-              Connexion
+              Devenir Partenaire
             </motion.button>
           </nav>
 
@@ -109,7 +109,7 @@ export const Navbar = () => {
                   whileTap={{ scale: 0.95 }}
                   className="w-full mt-4 bg-[#00E0A1] text-[#0A1A2F] px-6 py-3 rounded-lg font-bold"
                 >
-                  Connexion
+                  Devenir Partenaire
                 </motion.button>
               </div>
             </motion.div>

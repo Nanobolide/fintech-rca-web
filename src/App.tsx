@@ -4,11 +4,13 @@ import FintechLanding from "@/components/FintechLanding";
 
 const App = () => {
   return (
-    <div>
-           <Navbar />
-         <FintechLanding />;
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-1">
+        <FintechLanding />
+      </main>
     </div>
   )
 }
 
-export default App
+export default App;
