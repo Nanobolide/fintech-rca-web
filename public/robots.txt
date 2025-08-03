@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fintech-rca.vercel.app/sitemap.xml

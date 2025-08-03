@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const ProblemeEtSolution: React.FC = () => {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto" id="solution">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         {/* Problème */}
         <motion.div
