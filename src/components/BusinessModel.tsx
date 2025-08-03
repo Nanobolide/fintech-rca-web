@@ -27,7 +27,7 @@ const valuePropositions = [
 
 const BusinessModel: React.FC = () => {
   return (
-    <section className="bg-[#0A1A2F] text-white py-24 px-6 md:px-12">
+    <section className="bg-[#0A1A2F] text-white py-24 px-6 md:px-12"  id="modele">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0 }}
