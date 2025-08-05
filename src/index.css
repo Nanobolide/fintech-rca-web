@@ -68,3 +68,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Assure que le footer reste en bas */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}

@@ -1,17 +1,31 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-const navItems = [
-  { id: "solution", label: "Notre Solution" },
-  { id: "modele", label: "Modèle Économique" },
-  { id: "impact", label: "Impact Social" },
-  { id: "contact", label: "Contact", to: "/contact" }  // ← ajouter un champ `to`
-];
+  const navigate = useNavigate();
 
+  const navItems = [
+    { id: "solution", label: "Notre Solution", anchor: true },
+    { id: "modele", label: "Modèle Économique", to: "/modele-economique" },
+    { id: "impact", label: "Impact Social", to: "/impact-social" },
+    { id: "contact", label: "Contact", to: "/contact" }
+  ];
+
+  const handleAnchorClick = (id: string) => {
+    setMobileMenuOpen(false);
+    if (window.location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -23,58 +37,59 @@ const navItems = [
         {/* Barre de navigation principale */}
         <div className="flex justify-between items-center py-4">
           {/* Logo BALACO */}
-        {/* Logo BALACO */}
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="flex items-center cursor-pointer"
-                >
-                  <div className="bg-[#00E0A1] text-[#0A1A2F] w-8 h-8 rounded-lg flex items-center justify-center mr-2 font-bold">
-                    B
-                  </div>
-                  <span className="text-xl font-bold">BALACO</span>
-                </motion.div>
-              </Link>
+          <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center cursor-pointer"
+            >
+              <div className="bg-[#00E0A1] text-[#0A1A2F] w-8 h-8 rounded-lg flex items-center justify-center mr-2 font-bold">
+                B
+              </div>
+              <span className="text-xl font-bold">BALACO</span>
+            </motion.div>
+          </Link>
 
           {/* Navigation Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-           {navItems.map((item) => (
-            item.to ? (
-              <Link key={item.id} to={item.to}>
-                <motion.span
+            {navItems.map((item) => (
+              item.anchor ? (
+                <motion.button
+                  key={item.id}
+                  onClick={() => handleAnchorClick(item.id)}
                   whileHover={{ y: -2, color: "#00E0A1" }}
                   transition={{ duration: 0.2 }}
-                  className="font-medium px-3 py-2 cursor-pointer"
+                  className="font-medium px-3 py-2 text-left"
                 >
                   {item.label}
-                </motion.span>
-              </Link>
-            ) : (
-              <motion.a
-                key={item.id}
-                href={`#${item.id}`}
-                whileHover={{ y: -2, color: "#00E0A1" }}
-                transition={{ duration: 0.2 }}
-                className="font-medium px-3 py-2"
-              >
-                {item.label}
-              </motion.a>
-            )
-          ))}
+                </motion.button>
+              ) : (
+                <Link key={item.id} to={item.to || ""}>
+                  <motion.span
+                    whileHover={{ y: -2, color: "#00E0A1" }}
+                    transition={{ duration: 0.2 }}
+                    className="font-medium px-3 py-2 cursor-pointer block"
+                  >
+                    {item.label}
+                  </motion.span>
+                </Link>
+              )
+            ))}
 
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "#00c991"
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="bg-[#00E0A1] text-[#0A1A2F] px-6 py-2 rounded-lg font-bold ml-4"
-            >
-              Devenir Partenaire
-            </motion.button>
+            <Link to="/partnership">
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05,
+                  backgroundColor: "#00c991"
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="bg-[#00E0A1] text-[#0A1A2F] px-6 py-2 rounded-lg font-bold ml-4"
+              >
+                Devenir Partenaire
+              </motion.button>
+            </Link>
           </nav>
 
           {/* Bouton Menu Mobile */}
@@ -110,8 +125,21 @@ const navItems = [
             >
               <div className="pt-2 pb-4 space-y-2">
                 {navItems.map((item) => (
-                  item.to ? (
-                    <Link key={item.id} to={item.to} onClick={() => setMobileMenuOpen(false)}>
+                  item.anchor ? (
+                    <motion.button
+                      key={item.id}
+                      onClick={() => handleAnchorClick(item.id)}
+                      whileTap={{ scale: 0.95 }}
+                      className="block w-full text-left px-3 py-3 rounded-md text-base font-medium hover:bg-[#00E0A1]/10 hover:text-[#00E0A1]"
+                    >
+                      {item.label}
+                    </motion.button>
+                  ) : (
+                    <Link 
+                      key={item.id} 
+                      to={item.to || ""}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       <motion.span
                         whileTap={{ scale: 0.95 }}
                         className="block px-3 py-3 rounded-md text-base font-medium hover:bg-[#00E0A1]/10 hover:text-[#00E0A1]"
@@ -119,25 +147,17 @@ const navItems = [
                         {item.label}
                       </motion.span>
                     </Link>
-                  ) : (
-                    <motion.a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      onClick={() => setMobileMenuOpen(false)}
-                      whileTap={{ scale: 0.95 }}
-                      className="block px-3 py-3 rounded-md text-base font-medium hover:bg-[#00E0A1]/10 hover:text-[#00E0A1]"
-                    >
-                      {item.label}
-                    </motion.a>
                   )
                 ))}
 
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full mt-4 bg-[#00E0A1] text-[#0A1A2F] px-6 py-3 rounded-lg font-bold"
-                >
-                  Devenir Partenaire
-                </motion.button>
+                <Link to="/partnership" onClick={() => setMobileMenuOpen(false)}>
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full mt-4 bg-[#00E0A1] text-[#0A1A2F] px-6 py-3 rounded-lg font-bold"
+                  >
+                    Devenir Partenaire
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           )}

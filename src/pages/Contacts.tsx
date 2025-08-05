@@ -140,19 +140,7 @@ const Contacts: React.FC = () => {
       </section>
 
       {/* Pied de page */}
-      <footer className="bg-gray-900 text-white py-16 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex justify-center mb-8">
-            <span className="bg-[#00E0A1] text-[#0A1A2F] w-12 h-12 rounded-lg flex items-center justify-center text-2xl font-bold mr-3">B</span>
-          </div>
-          <p className="opacity-80 mb-6">
-            BALACO — La révolution du mobile money en Centrafrique
-          </p>
-          <p className="opacity-60">
-            © {new Date().getFullYear()} BALACO RCA. Tous droits réservés.
-          </p>
-        </div>
-      </footer>
+      
     </div>
   );
 };
