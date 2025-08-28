@@ -29,11 +29,11 @@ const Hero: React.FC<HeroProps> = () => {
           className="max-w-6xl mx-auto relative z-10"
         >
           <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Investissez dans le <span className="text-[#00E0A1]">futur financier</span> de la RCA
+            Le <span className="text-[#00E0A1]">futur financier</span> de la République Centrafricaine
           </motion.h1>
           
           <motion.p variants={fadeInUp} className="text-xl md:text-2xl mb-10 max-w-2xl opacity-90">
-            BALACO - La première fintech patriotique offrant des services financiers accessibles à 1% de frais
+            BALACO - La fintech patriotique offrant des services financiers accessibles à 1% de frais
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-20">
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = () => {
           <motion.div variants={staggerContainer} className="flex flex-wrap gap-12 mt-16">
             {[
               { value: "85%", label: "Population non-bancarisée" },
-              { value: "$12M", label: "Transferts mensuels (est. RCA)" },
+              { value: "90%", label: "Forte utilisation du cash dans les Transactions" },
               { value: "1%", label: "Frais uniques - 3x moins cher" }
             ].map((item, index) => (
               <motion.div 

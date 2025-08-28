@@ -35,7 +35,7 @@ const Partnership = () => {
       icon: <Satellite className="w-8 h-8" />,
       title: "Opérateurs Télécoms",
       benefits: [
-        "Nouveaux revenus (USSD, mobile money)",
+        "Nouveaux revenus (mobile money)",
         "Synergies infrastructurelles",
         "Bonus fidélisation clients"
       ]
@@ -74,7 +74,7 @@ const Partnership = () => {
             <span className="text-[#00E0A1]">Co-construisez</span> l'écosystème financier centrafricain
           </h1>
           <p className="text-xl md:text-2xl opacity-90">
-            Partenariats stratégiques pour une solution <strong>100% RCA</strong>
+            Partenariats stratégiques pour une solution <strong>Sécurisée et  1% de frais </strong>
           </p>
         </motion.div>
       </section>
@@ -90,7 +90,7 @@ const Partnership = () => {
           >
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-3xl font-bold text-[#0A1A2F] mb-6">
-                Pourquoi une <span className="text-[#00E0A1]">solution nationale</span> ?
+                Pourquoi la <span className="text-[#00E0A1]">solution "BALACO"</span> ?
               </h2>
               <ul className="space-y-4">
                 {[

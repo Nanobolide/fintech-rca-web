@@ -1,118 +1,132 @@
 import React from 'react';
 import { motion } from 'framer-motion';
- 
 
-// Données structurées
+// Données structurées (corrigées, sans USSD)
 const problemData = [
   {
-    title: "Coûts Prohibitifs",
-    content: "Les frais de transfert d'argent en RCA sont parmi les plus élevés d'Afrique centrale (Banque Mondiale 2022).",
-    stat: "Coût moyen: 4.2% vs 2.5% en Afrique subsaharienne"
+    title: "Coûts élevés",
+    content:
+      "Les frais sur les transferts d’argent restent élevés par rapport au pouvoir d’achat local (références régionales 3–7 %).",
+    stat: "Référence marché : 3–7 % selon services (vs 1 % visé par BALACO)"
   },
   {
-    title: "Désert Financier",
-    content: "Seulement 12% de la population adulte a accès à un compte bancaire (Findex 2021).",
-    stat: "1 agence bancaire pour 100,000 habitants (vs 1/15,000 au Cameroun)"
+    title: "Faible inclusion",
+    content:
+      "Environ 15 % des adultes disposent d’un compte formel en République centrafricaine (Banque mondiale).",
+    stat: "Moyenne Afrique centrale ≈ 33 % (Banque mondiale)"
   },
   {
-    title: "Dépendance Technologique",
-    content: "90% des transactions mobiles passent par des opérateurs étrangers (BEAC 2023).",
-    stat: "Sortie nette de capitaux: ~15M€/an via frais de transfert"
+    title: "Dépendance d’acteurs externes",
+    content:
+      "Le marché s’appuie principalement sur des solutions d’opérateurs étrangers ; il manque une solution nationale.",
+    stat: "Enjeu : souveraineté financière et traçabilité"
   },
   {
-    title: "Exclusion Rurale",
-    content: "78% des services financiers sont concentrés à Bangui (PNUD 2022).",
-    stat: "Seulement 22% des femmes rurales ont accès aux services financiers"
+    title: "Accès inégal hors capitale",
+    content:
+      "Les services financiers sont concentrés à Bangui ; l’accès reste limité dans de nombreuses villes et zones rurales.",
+    stat: "Nécessité d’un réseau d’agents de proximité"
   }
 ];
 
 const solutionData = [
   {
     icon: "💸",
-    title: "Économique",
+    title: "Tarifs simples",
     points: [
-      "Frais fixes à 1% (inférieurs aux standards régionaux)",
-      "Économie moyenne de 3,000 FCFA par transfert de 100,000 FCFA",
-      "Forfaits famille pour les transferts récurrents"
+      "Frais à 1 % sur transferts P2P (positionnement transparent)",
+      "Objectif : réduire le coût total pour les ménages et commerçants",
+      "Grille tarifaire courte, reçus systématiques"
     ]
   },
   {
-    icon: "🌍",
-    title: "Couverture Nationale",
+    icon: "📱",
+    title: "Application simple",
     points: [
-      "Déploiement dans 5 villes secondaires en 2024 (Berbérati, Bambari, Bouar, Bossangoa, Bangassou)",
-      "250 agents certifiés d'ici fin 2023",
-      "Partenariat avec 50 points de vente locaux"
+      "Parcours minimalistes : dépôt, transfert, paiement marchand",
+      "QR ou numéro de téléphone, confirmations instantanées",
+      "Design accessible pour tous les niveaux de littératie numérique"
+    ]
+  },
+  {
+    icon: "🏪",
+    title: "Réseau d’agents",
+    points: [
+      "Agents locaux formés pour dépôts/retraits",
+      "Supervision, affichage des tarifs, service client",
+      "Déploiement progressif : pilote à Bangui, extension nationale"
     ]
   },
   {
     icon: "🔐",
-    title: "Sécurité & Conformité",
+    title: "Sécurité & conformité",
     points: [
-      "Solution certifiée par la BEAC (n° agrément: MF-2023-045)",
-      "Chiffrement AES-256 pour toutes les transactions",
-      "Audit trimestriel par Deloitte RCA"
+      "Conformité BEAC/CEMAC (KYC/LCB-FT, limites par paliers)",
+      "Traçabilité des transactions et protection des données",
+      "Gouvernance des risques et audits réguliers"
     ]
   }
 ];
 
 const impactData = [
-  { 
-    value: "2.1M", 
-    label: "Bénéficiaires potentiels",
-    detail: "Population adulte non bancarisée ciblée" 
+  {
+    value: "875 000",
+    label: "Comptes enregistrés (A5, proj.)",
+    detail: "Projection Business Plan (année 5)"
   },
-  { 
-    value: "45M€", 
-    label: "Économie annuelle",
-    detail: "Sur les frais de transfert (projection année 3)" 
+  {
+    value: "8 000",
+    label: "Agents (A5, proj.)",
+    detail: "Réseau d’agents formés et supervisés"
   },
-  { 
-    value: "3.5x", 
-    label: "Retour sur investissement",
-    detail: "Projection sur 5 ans (étude McKinsey 2023)" 
+  {
+    value: "≥ 300 Mds FCFA",
+    label: "Transactions digitalisées (A5, proj.)",
+    detail: "Volume cumulé estimatif à 5 ans"
   },
-  { 
-    value: "78%", 
-    label: "Couverture territoriale",
-    detail: "Préfectures couvertes d'ici 2025" 
+  {
+    value: "Année 3",
+    label: "Seuil de rentabilité (proj.)",
+    detail: "Rentabilité opérationnelle visée"
   }
 ];
 
+// Témoignages : gardés génériques (pas d’attribution institutionnelle non confirmée)
 const testimonials = [
   {
-    quote: "BALACO répond à un besoin crucial d'inclusion financière souveraine.",
-    author: "Ministère des Finances RCA",
-    role: "Partenariat stratégique"
+    quote: "Une application simple qui réduit le coût des transferts pour les familles et les commerçants.",
+    author: "Utilisateur pilote",
+    role: "Commerçant de quartier"
   },
   {
-    quote: "Une solution qui comprend les réalités locales des petits commerçants.",
-    author: "Association des Commerçants Centrafricains",
-    role: "Utilisateur pilote"
+    quote: "Le réseau d’agents de proximité facilite les dépôts et retraits au quotidien.",
+    author: "Utilisateur pilote",
+    role: "Agent point de service"
   }
 ];
 
 const caseStudies = [
   {
-    title: "Impact sur les transferts transfrontaliers",
-    result: "Réduction de 62% des coûts pour les travailleurs en Cameroun",
-    location: "Frontière Garoua-Boulaï"
+    title: "Création d’emplois locaux (pilote)",
+    result: "Mise en place d’un réseau d’agents avec supervision et formation",
+    location: "Bangui (phase pilote)"
   },
   {
-    title: "Adoption par les femmes entrepreneures",
-    result: "300% d'augmentation des transactions en 6 mois",
-    location: "Marché central de Bangui"
+    title: "Inclusion financière (pilote)",
+    result: "Onboarding simple via l’application, reçus et traçabilité",
+    location: "Marchés et communes partenaires"
   }
 ];
 
 const ProblemeSolution: React.FC = () => {
   return (
     <>
-      
-        <title>Problème & Solution | BALACO</title>
-        <meta name="description" content="Analyse approfondie de l'exclusion financière en RCA et notre solution innovante" />
-        <link rel="icon" href="/favicon.ico" />
-       
+      <title>Problème & Solution | BALACO</title>
+      <meta
+        name="description"
+        content="Analyse de l’exclusion financière en République centrafricaine et réponse proposée par BALACO : application simple, réseau d’agents, tarifs à 1 %."
+      />
+      <link rel="icon" href="/favicon.ico" />
 
       <main className="bg-white text-[#0A1A2F]">
         {/* Hero Section */}
@@ -123,7 +137,7 @@ const ProblemeSolution: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Enjeux Financiers en RCA
+              Enjeux financiers en République centrafricaine
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -131,7 +145,8 @@ const ProblemeSolution: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl max-w-3xl"
             >
-              Comprendre les défis de l'inclusion financière et découvrir comment BALACO apporte une réponse concrète
+              Comprendre les défis d’inclusion financière et découvrir comment BALACO apporte
+              une réponse concrète, simple et souveraine.
             </motion.p>
           </div>
         </section>
@@ -147,9 +162,12 @@ const ProblemeSolution: React.FC = () => {
             >
               <div className="md:w-1/3">
                 <h2 className="text-3xl font-bold mb-4 text-red-600">Le Problème</h2>
-                <p className="text-lg">L'exclusion financière en RCA représente un frein majeur au développement économique.</p>
+                <p className="text-lg">
+                  L’exclusion financière en République centrafricaine freine la croissance et
+                  entretient l’usage massif des espèces.
+                </p>
               </div>
-              
+
               <div className="md:w-2/3 grid md:grid-cols-2 gap-6">
                 {problemData.map((item, i) => (
                   <motion.div
@@ -180,7 +198,7 @@ const ProblemeSolution: React.FC = () => {
               viewport={{ once: true }}
               className="text-3xl font-bold mb-12 text-center"
             >
-              La Solution <span className="text-[#00E0A1]">BALACO</span>
+              La solution <span className="text-[#00E0A1]">BALACO</span>
             </motion.h2>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -208,11 +226,11 @@ const ProblemeSolution: React.FC = () => {
           </div>
         </section>
 
-        {/* Section Études de Cas */}
+        {/* Section Études de Cas (pilote) */}
         <section className="py-16 px-6 md:px-12 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Nos Résultats Concrets</h2>
-            
+            <h2 className="text-3xl font-bold mb-12 text-center">Études de cas (pilote)</h2>
+
             <div className="grid md:grid-cols-2 gap-8">
               {caseStudies.map((study, i) => (
                 <motion.div
@@ -237,11 +255,11 @@ const ProblemeSolution: React.FC = () => {
           </div>
         </section>
 
-        {/* Section Impact */}
+        {/* Section Impact (projections BP) */}
         <section className="py-16 px-6 md:px-12 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Impact Attendu</h2>
-            
+            <h2 className="text-3xl font-bold mb-12 text-center">Impact attendu (projections)</h2>
+
             <div className="grid md:grid-cols-4 gap-6">
               {impactData.map((item, i) => (
                 <motion.div
@@ -260,12 +278,12 @@ const ProblemeSolution: React.FC = () => {
           </div>
         </section>
 
-        {/* Section Témoignages */}
+        {/* Section Témoignages (génériques) */}
         <section className="py-16 px-6 md:px-12 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Ils nous font confiance</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
+            <h2 className="text-3xl font-bold mb-12 text-center">Ils nous font confiance (pilote)</h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
               {testimonials.map((item, i) => (
                 <motion.div
                   key={i}
@@ -282,9 +300,6 @@ const ProblemeSolution: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Footer Professionnel */}
-         
       </main>
     </>
   );

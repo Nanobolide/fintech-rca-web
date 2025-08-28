@@ -2,10 +2,10 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  BookOpen, 
-  Globe, 
+import {
+  ArrowRight,
+  BookOpen,
+  Globe,
   MapPin,
   Shield,
   Users,
@@ -16,101 +16,98 @@ import {
 } from 'lucide-react';
 import React from 'react';
 
-// Définition des variants avec le bon typage
+// Variants conservés (même apparence)
 const fadeIn: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 20 
-  },
-  visible: (i: number) => ({ 
-    opacity: 1, 
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
     y: 0,
-    transition: { 
+    transition: {
       delay: i * 0.15,
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1] as const // Utilisation de 'as const' pour le tableau
+      ease: [0.16, 1, 0.3, 1] as const
     }
   })
 };
 
 const SocialImpact = () => {
-  // Données structurées
+  // Données structurées (texte réaliste + sourcé)
   const data = {
     hero: {
       title: "L'Impact Vérifié de BALACO",
-      subtitle: "Solutions financières validées par les institutions internationales",
+      subtitle: "Contenus alignés sur des références internationales (GSMA, Banque mondiale) et le cadre CEMAC/BEAC",
       bgPattern: "bg-[url('/assets/pattern.svg')]"
     },
     studies: [
       {
         icon: <PieChart className="w-5 h-5" />,
-        title: "Croissance Économique",
-        content: "2,5% du PIB africain généré par le mobile money",
+        title: "Adoption mondiale",
+        content: "1,6 milliard de comptes mobile money dans le monde ; l’Afrique subsaharienne concentre ~70 % des transactions.",
         source: "GSMA 2023",
         link: "https://www.gsma.com/mobilemoney"
       },
       {
         icon: <TrendingUp className="w-5 h-5" />,
-        title: "Réduction de Pauvreté",
-        content: "-14% de pauvreté extrême en zones rurales",
-        source: "FMI 2021",
-        link: "https://www.imf.org"
+        title: "Inclusion financière",
+        content: "Le mobile money favorise l’accès aux paiements et services financiers pour les ménages et les petits commerces.",
+        source: "Banque mondiale",
+        link: "https://www.worldbank.org"
       },
       {
         icon: <Users className="w-5 h-5" />,
-        title: "Emplois Créés",
-        content: "2M+ emplois directs en Afrique",
-        source: "Banque Mondiale 2022",
-        link: "https://www.worldbank.org"
+        title: "Effets socio-économiques",
+        content: "Digitaliser les paiements réduit les coûts de transaction et améliore la traçabilité pour l’économie locale.",
+        source: "GSMA / Banque mondiale",
+        link: "https://www.gsma.com/mobilemoney"
       }
     ],
     regulations: [
       {
         icon: <Shield className="w-5 h-5" />,
-        title: "Directive CEMAC",
-        content: "Conforme à la réglementation N°01/18-CEMAC-UMAC-CM",
-        authority: "COBAC",
-        year: "2018-présent"
+        title: "Règlementation CEMAC",
+        content: "Opération de services de paiement dans le respect des exigences prudentielles et de la lutte contre le blanchiment.",
+        authority: "BEAC / COBAC",
+        year: "Règlement 01/18 – en vigueur"
       },
       {
         icon: <BookOpen className="w-5 h-5" />,
-        title: "Plan National RCA",
-        content: "Aligné sur la stratégie d'inclusion financière 2021-2025",
-        authority: "MinFin RCA",
-        year: "2021-2025"
+        title: "Alignement national",
+        content: "Convergence avec les objectifs publics d’inclusion financière en République centrafricaine.",
+        authority: "Ministère des Finances",
+        year: "Cadre national d’inclusion financière"
       }
     ],
     impacts: [
       {
         icon: <MapPin className="w-6 h-6" />,
-        value: "70%",
-        label: "Couverture territoriale",
-        detail: "14 préfectures sur 16",
-        source: "BALACO 2023"
+        value: "Pilote",
+        label: "Déploiement initial",
+        detail: "Bangui et communes partenaires (phase pilote)",
+        source: "BALACO – scénario pilote"
       },
       {
         icon: <Users className="w-6 h-6" />,
-        value: "1,200+",
-        label: "Emplois créés",
-        detail: "45% occupés par des femmes",
-        source: "MinTravail RCA"
+        value: "50–100",
+        label: "Agents de proximité",
+        detail: "Réseau formé et supervisé (phase pilote)",
+        source: "BALACO – scénario pilote"
       },
       {
         icon: <Smartphone className="w-6 h-6" />,
-        value: "100%",
-        label: "Sécurité",
-        detail: "0 fraude enregistrée",
-        source: "COBAC 2023"
+        value: "1 %",
+        label: "Frais P2P",
+        detail: "Tarification simple et transparente sur transferts",
+        source: "BALACO – grille cible"
       }
     ]
   };
 
   return (
     <div className="text-[#0A1A2F]">
-      {/* Hero Section */}
+      {/* Hero Section (apparence conservée) */}
       <section className="relative bg-[#0A1A2F] text-white py-28 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[url('/assets/map-pattern.svg')]"></div>
-        <motion.div 
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -118,7 +115,7 @@ const SocialImpact = () => {
           className="max-w-6xl mx-auto text-center relative z-10"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="text-[#00E0A1]">Impact Social</span> <br />Mesurable en RCA
+            <span className="text-[#00E0A1]">Impact Social</span> <br />Mesurable en République centrafricaine
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
             {data.hero.subtitle}
@@ -141,7 +138,7 @@ const SocialImpact = () => {
               <h2 className="text-3xl font-bold text-[#0A1A2F]">Validation Internationale</h2>
             </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Des études mondiales confirment l'impact des solutions comme BALACO
+              Des références mondiales confirment l’impact des solutions de paiement mobile
             </p>
           </motion.div>
 
@@ -163,13 +160,13 @@ const SocialImpact = () => {
                   <h3 className="text-xl font-semibold">{study.title}</h3>
                 </div>
                 <p className="mb-5 text-gray-700 leading-relaxed">{study.content}</p>
-                <a 
-                  href={study.link} 
+                <a
+                  href={study.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm text-[#00E0A1] hover:underline font-medium"
                 >
-                  Voir l'étude <ChevronRight className="w-4 h-4 ml-1" />
+                  Voir la source <ChevronRight className="w-4 h-4 ml-1" />
                 </a>
               </motion.div>
             ))}
@@ -192,7 +189,7 @@ const SocialImpact = () => {
               <h2 className="text-3xl font-bold text-[#0A1A2F]">Conformité Réglementaire</h2>
             </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              BALACO s'inscrit dans les cadres légaux nationaux et régionaux
+              BALACO s’inscrit dans les cadres légaux nationaux et régionaux
             </p>
           </motion.div>
 
@@ -225,7 +222,7 @@ const SocialImpact = () => {
         </div>
       </section>
 
-      {/* Impact Local */}
+      {/* Impact Local (réaliste : phase pilote) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -235,9 +232,9 @@ const SocialImpact = () => {
             custom={0}
             className="mb-16 text-center"
           >
-            <h2 className="text-3xl font-bold text-[#0A1A2F] mb-4">Impact Concret en RCA</h2>
+            <h2 className="text-3xl font-bold text-[#0A1A2F] mb-4">Impact concret en République centrafricaine</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Des résultats tangibles qui transforment le quotidien des Centrafricains
+              Résultats attendus de la phase pilote à Bangui, avec montée en charge progressive
             </p>
           </motion.div>
 
@@ -267,28 +264,19 @@ const SocialImpact = () => {
       {/* CTA Final */}
       <section className="py-24 bg-gradient-to-b from-[#0A1A2F] to-[#0A1A2F]/90 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            custom={0}
-          >
+          <motion.div initial="hidden" animate="visible" variants={fadeIn} custom={0}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Prêt à soutenir cette transformation ?
             </h2>
-            <motion.p 
-              variants={fadeIn}
-              custom={0.3}
-              className="text-xl mb-8 max-w-2xl mx-auto opacity-90"
-            >
-              Rejoignez les institutions qui accompagnent BALACO
+            <motion.p variants={fadeIn} custom={0.3} className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Institutions et partenaires : contactez BALACO pour la phase pilote
             </motion.p>
             <motion.div variants={fadeIn} custom={0.6}>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 bg-[#00E0A1] hover:bg-[#00c991] text-[#0A1A2F] px-8 py-4 rounded-lg font-bold transition-colors shadow-lg hover:shadow-xl"
               >
-                Devenir Partenaire Institutionnel
+                Devenir partenaire institutionnel
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
