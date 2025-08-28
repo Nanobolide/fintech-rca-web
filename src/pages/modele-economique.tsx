@@ -1,34 +1,36 @@
 // pages/modele-economique.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
- 
 
 const ModeleEconomique: React.FC = () => {
   return (
     <>
-   
-        <title>Modèle Économique | BALACO</title>
-        <meta name="description" content="Découvrez notre modèle économique innovant conçu pour la RCA" />
-     
+      <title>Modèle Économique | BALACO</title>
+      <meta
+        name="description"
+        content="Découvrez le modèle économique BALACO : application simple type Wave, réseau d’agents, frais à 1 % sur transferts P2P, adapté à la République centrafricaine."
+      />
 
       <main className="bg-white text-[#0A1A2F] min-h-screen">
         {/* Hero Section */}
         <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-[#0A1A2F] to-[#00E0A1] text-white">
           <div className="max-w-6xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
               Modèle Économique BALACO
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto"
             >
-              Une solution financière innovante, durable et profitable pour la République Centrafricaine
+              Une solution simple et durable pour la République centrafricaine :
+              frais à <strong>1 %</strong> sur les transferts P2P, paiements marchands,
+              et réseau d’agents de proximité.
             </motion.p>
           </div>
         </section>
@@ -38,23 +40,28 @@ const ModeleEconomique: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             {/* Section Valeurs */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold mb-12 text-center text-[#0A1A2F]">Avantages Concurrentiels</h2>
+              <h2 className="text-3xl font-bold mb-12 text-center text-[#0A1A2F]">
+                Avantages Concurrentiels
+              </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
                   {
                     icon: '🌍',
-                    title: 'Marché Stratégique',
-                    description: 'Positionnement unique sur un marché de 5.4 millions d\'habitants avec seulement 15% de bancarisation.'
+                    title: 'Marché stratégique',
+                    description:
+                      "En République centrafricaine, l’inclusion financière reste faible (≈ 15 % des adultes). L’opportunité de digitalisation par une application simple et des agents est majeure."
                   },
                   {
                     icon: '💎',
-                    title: 'Valeur Unique',
-                    description: 'Solution intégrée combinant mobile money, identité numérique et services financiers innovants.'
+                    title: 'Valeur simple & claire',
+                    description:
+                      "Positionnement type Wave : application épurée, frais transparents à 1 % sur P2P, reçus systématiques et expérience utilisateur accessible."
                   },
                   {
                     icon: '📊',
-                    title: 'Potentiel de Croissance',
-                    description: 'Projection de 1.2 millions d\'utilisateurs actifs d\'ici 3 ans avec un taux de pénétration de 25%.'
+                    title: 'Croissance maîtrisée',
+                    description:
+                      "Déploiement progressif : pilote à Bangui, extension nationale avec montée en charge du réseau d’agents et des paiements marchands."
                   }
                 ].map((item, index) => (
                   <motion.div
@@ -75,48 +82,54 @@ const ModeleEconomique: React.FC = () => {
 
             {/* Flux de revenus détaillés */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold mb-12 text-center text-[#0A1A2F]">Architecture des Revenus</h2>
+              <h2 className="text-3xl font-bold mb-12 text-center text-[#0A1A2F]">
+                Architecture des Revenus
+              </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {[
                   {
-                    title: "Transferts d'Argent",
-                    description: "Structure de frais compétitive avec segmentation selon le type de transfert.",
+                    title: "Transferts d’argent (P2P)",
+                    description:
+                      "Cœur du modèle avec tarification simple : accessibilité et volumes.",
                     details: [
-                      "Transferts P2P: 1% (max 5,000 FCFA)",
-                      "Transferts bancaires: 1.5%",
-                      "Transferts internationaux: 3%"
+                      "Transferts P2P : 1 % (frais clairs et plafonds transparents)",
+                      "Reçus et historique des transactions",
+                      "Objectif : maximiser l’adoption grâce à la simplicité"
                     ],
                     icon: '🔄'
                   },
                   {
-                    title: "Paiements Marchands",
-                    description: "Commission sur les transactions commerciales avec incitations pour les partenaires.",
+                    title: "Paiements marchands (C2B/B2B)",
+                    description:
+                      "Digitalisation des paiements en boutique et entre entreprises.",
                     details: [
-                      "Transactions commerciales: 0.5%",
-                      "Paiements de factures: 1%",
-                      "Services publics: 0.75%"
+                      "Paiements marchands : 0,5 %",
+                      "QR/numéro de téléphone, confirmations instantanées",
+                      "Incitations d’adoption pour commerçants"
                     ],
                     icon: '💳'
                   },
                   {
-                    title: "Réseau d'Agents",
-                    description: "Modèle de revenus partagés avec notre réseau de distribution.",
+                    title: "Services complémentaires",
+                    description:
+                      "Revenus additionnels pour fidéliser et augmenter la valeur d’usage.",
                     details: [
-                      "Frais d'adhésion: 200 FCFA/cycle",
-                      "Commission agent: 0.2% par transaction",
-                      "Bonus volumétrique"
-                    ],
-                    icon: '👥'
-                  },
-                  {
-                    title: "Services Value-Added",
-                    description: "Produits financiers complémentaires générant des revenus récurrents.",
-                    details: [
-                      "Micro-crédits (intérêts)",
-                      "Épargne (frais de gestion)",
-                      "Assurances (commission)"
+                      "Airtime & factures : commission ~3 %",
+                      "Partenariats (facturiers, éducation, santé…)",
+                      "Épargne/microcrédit : à partir de l’Année 3 via banques partenaires"
                     ],
                     icon: '💰'
+                  },
+                  {
+                    title: "Réseau d’agents",
+                    description:
+                      "Distribution physique au plus près des usagers.",
+                    details: [
+                      "Commissions agents : partage jusqu’à ~40 % des frais collectés",
+                      "Formation, affichage des tarifs, service client",
+                      "Supervision et contrôle qualité du réseau"
+                    ],
+                    icon: '👥'
                   }
                 ].map((item, index) => (
                   <motion.div
@@ -144,32 +157,34 @@ const ModeleEconomique: React.FC = () => {
               </div>
             </div>
 
-            {/* Projections financières */}
+            {/* Projections financières (alignées à tes docs : A1, A3, A5) */}
             <div className="mb-20 bg-gray-50 p-8 rounded-xl border border-gray-200">
-              <h2 className="text-3xl font-bold mb-8 text-center text-[#0A1A2F]">Projections Financières 2025-2028</h2>
+              <h2 className="text-3xl font-bold mb-8 text-center text-[#0A1A2F]">
+                Projections financières (repères)
+              </h2>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-100">
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Indicateur</th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Année 1</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Année 2</th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Année 3</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Année 5</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {[
-                      { label: "Utilisateurs Actifs", y1: "250,000", y2: "600,000", y3: "1,200,000" },
-                      { label: "Transactions Mensuelles", y1: "1.2M", y2: "3.5M", y3: "8M" },
-                      { label: "Chiffre d'Affaires (FCFA)", y1: "120M", y2: "350M", y3: "800M" },
-                      { label: "Marge Brute (%)", y1: "45%", y2: "52%", y3: "58%" },
-                      { label: "Agents Actifs", y1: "500", y2: "1,200", y3: "2,500" }
+                      { label: "Comptes enregistrés", a1: "≈ 35 000", a3: "≈ 350 000", a5: "≈ 875 000" },
+                      { label: "Utilisateurs actifs mensuels", a1: "≈ 15 000", a3: "≈ 150 000", a5: "≈ 400 000" },
+                      { label: "Réseau d’agents", a1: "≈ 500", a3: "≈ 3 000", a5: "≈ 8 000" },
+                      { label: "Chiffre d’affaires (USD)", a1: "≤ 0,5 M", a3: "> 4 M", a5: "8–12 M" },
+                      { label: "Rentabilité", a1: "Négative (investissement)", a3: "Seuil de rentabilité atteint", a5: "Marge nette 15–20 %" }
                     ].map((row, i) => (
                       <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{row.label}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.y1}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.y2}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{row.y3}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{row.a1}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{row.a3}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{row.a5}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -177,7 +192,8 @@ const ModeleEconomique: React.FC = () => {
               </div>
             </div>
 
-            {/* ROI et Investissement */}
+            {/* Investissement & Impact (texte ajusté, sans promesses non sourcées) */}
+           {/* Investissement & Impact (réaliste, pilote Bangui) */}
             <div className="grid md:grid-cols-2 gap-8 mb-20">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -185,26 +201,27 @@ const ModeleEconomique: React.FC = () => {
                 viewport={{ once: true }}
                 className="bg-[#0A1A2F] text-white p-8 rounded-xl"
               >
-                <h3 className="text-2xl font-bold mb-6">Opportunité d'Investissement</h3>
+                <h3 className="text-2xl font-bold mb-6">Opportunité d’investissement (phase pilote)</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="text-[#00E0A1] mr-2">•</span>
-                    <span>Montant recherché: 2.5 milliards FCFA</span>
+                    <span><strong>Montant recherché :</strong> 10 à 15 millions FCFA</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#00E0A1] mr-2">•</span>
-                    <span>Ticket minimum: 250 millions FCFA</span>
+                    <span>Utilisation des fonds : finalisation de l’application, conformité réglementaire, déploiement pilote à Bangui</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#00E0A1] mr-2">•</span>
-                    <span>Horizon de sortie: 5 ans</span>
+                    <span>Mise en place d’un réseau initial de 50 à 100 agents dans la capitale</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#00E0A1] mr-2">•</span>
-                    <span>ROI projeté: 35% annuel</span>
+                    <span>Objectif : tester le modèle, valider l’adoption et préparer l’extension nationale</span>
                   </li>
                 </ul>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -212,13 +229,13 @@ const ModeleEconomique: React.FC = () => {
                 transition={{ delay: 0.1 }}
                 className="bg-white border border-gray-200 p-8 rounded-xl shadow-sm"
               >
-                <h3 className="text-2xl font-bold mb-6 text-[#0A1A2F]">Impact Socio-Économique</h3>
+                <h3 className="text-2xl font-bold mb-6 text-[#0A1A2F]">Impact attendu (phase pilote)</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { value: "85%", label: "Population couverte" },
-                    { value: "12k", label: "Emplois créés" },
-                    { value: "45%", label: "Inclusion financière" },
-                    { value: "30%", label: "Réduction coûts" }
+                    { value: "1 000+", label: "Utilisateurs actifs visés à Bangui" },
+                    { value: "50–100", label: "Agents déployés en capitale" },
+                    { value: "1 %", label: "Frais simples et compétitifs" },
+                    { value: "Année 1", label: "Mise en place & test du modèle" }
                   ].map((item, i) => (
                     <div key={i} className="bg-gray-50 p-4 rounded-lg">
                       <p className="text-3xl font-bold text-[#00E0A1]">{item.value}</p>
@@ -228,11 +245,9 @@ const ModeleEconomique: React.FC = () => {
                 </div>
               </motion.div>
             </div>
+
           </div>
         </section>
-
-        {/* Footer Professionnel */}
-      
       </main>
     </>
   );

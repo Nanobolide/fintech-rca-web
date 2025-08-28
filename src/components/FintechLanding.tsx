@@ -11,7 +11,7 @@ const InvestorLanding = () => {
     document.title = "BALACO RCA - Investissez dans la révolution financière";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Opportunité d\'investissement dans la première fintech centrafricaine de mobile money - 1% de frais, 100% souverain');
+      metaDesc.setAttribute('content', 'La fintech centrafricaine de mobile money - 1% de frais, 100% souverain');
     }
   }, []);
 
